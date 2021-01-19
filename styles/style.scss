@@ -1,0 +1,105 @@
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Main Palette colors */
+$palette-color1: #2E61E8;
+$palette-color2: #3098F2;
+$palette-color3: #36BBDC;
+$palette-color4: #30F2E5;
+$palette-color5: #2EE8A7;
+
+/* Font colors */
+$base-font-color: #1985A5;
+$title-font-color: rgba(0, 86, 107, 0.8);
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: $base-font-color;
+}
+
+#wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.background {
+    width: 100vw;
+    min-width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+
+    background: linear-gradient(111.34deg, rgba(48, 152, 242, 0.9) 0%, rgba(46, 232, 167, 0.9) 100%);
+    position: fixed;
+
+    .bg-circle {
+        &:nth-child(1) {
+            position: absolute;
+            width: 581px;
+            height: 645px;
+            left: 10vw;
+            top: 40vh;
+    
+            background: linear-gradient(132.54deg, #73FDD1 16.87%, #1EBEC8 94.28%);
+            filter: blur(500px);
+        }
+    
+        &:nth-child(2) {
+            position: absolute;
+            width: 417px;
+            height: 521px;
+            left: 55vw;
+            top: 5vh;
+    
+            background: linear-gradient(132.54deg, #30CCD6 16.87%, #4674EF 94.28%);
+            filter: blur(500px);
+        }
+    }
+
+    .bg-eclipse {
+        &:nth-child(3) {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            left: 2vw;
+            bottom: 3vh;
+            
+            background: linear-gradient(162.39deg, rgba(255, 255, 255, 0.48) 16.75%, rgba(255, 255, 255, 0.12) 87.95%);
+            backdrop-filter: blur(100px);
+
+            border-radius: 50%;
+        }
+
+        &:nth-child(4) {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            left: 60vw;
+            top: 3vh;
+
+            background: linear-gradient(138.33deg, rgba(255, 255, 255, 0.48) 12.66%, rgba(255, 255, 255, 0.12) 76.46%);
+            backdrop-filter: blur(100px);
+
+            border-radius: 50%;
+        }
+    }
+}
+
+.container {
+    width: 1100px;
+    height: 600px;
+
+    background: linear-gradient(106.35deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.12) 100%);
+    backdrop-filter: blur(100px);
+
+    border-radius: 30px;
+
+    overflow: hidden;
+}
