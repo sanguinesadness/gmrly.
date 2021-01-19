@@ -13,23 +13,159 @@
 
 <body>
     <div id="wrapper">
-        <div class="background">
-            <div class="bg-circle"></div>
-            <div class="bg-circle"></div>
-            <div class="bg-eclipse"></div>
-            <div class="bg-eclipse"></div>
-        </div>
-
-        <span class="logo">gamerly.</span>
-
+        <!-- Main glass container -->
         <div class="container">
-            <div class="header">
-
+            <div class="dashboard">
+                <div class="profile">
+                    <div class="img-wrapper">
+                        <img class="profile__photo" src="pictures/jpg/dev-ed.png">
+                    </div>
+                    <h3 class="profile__name">Simo Edwin</h3>
+                    <span class="profile__rank">Citizen</span>
+                </div>
+                <ul class="links">
+                    <li class="link selected">
+                        <div class="link__img">
+                            <img src="pictures/icons/svg/bar-chart.svg">
+                        </div>
+                        <div class="link__text">
+                            <span>Progress</span>
+                        </div>
+                    </li>
+                    <li class="link">
+                        <div class="link__img">
+                            <img src="pictures/icons/svg/library.svg">
+                        </div>
+                        <div class="link__text">
+                            <span>Library</span>
+                        </div>
+                    </li>
+                    <li class="link">
+                        <div class="link__img">
+                            <img src="pictures/icons/svg/achievements.svg">
+                        </div>
+                        <div class="link__text">
+                            <span>Achievements</span>
+                        </div>
+                    </li>
+                    <li class="link">
+                        <div class="link__img">
+                            <img src="pictures/icons/svg/wish-list.svg">
+                        </div>
+                        <div class="link__text">
+                            <span>Wish list</span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="connect-box">
+                    <span class="connect-box__text">Connect<br>to other<br>platforms</span>
+                    <img class="connect-box__img" src="pictures/icons/svg/rocket.svg">
+                </div>
             </div>
-            <div class="content">
 
+            <div class="content">
+                <div class="title">
+                    <h1>Active Games</h1>
+                </div>
+
+                <form class="search" name="game-search">
+                    <input type="text" placeholder="Search">
+                    <button type="submit"></button>
+                </form>
+
+                <div class="game-cards">
+                    <div class="game-card">
+                        <div class="game-card__photo">
+                            <img src="pictures/jpg/Valhalla-min.png">
+                        </div>
+                        <div class="game-card__content">
+                            <div class="title">
+                                <h4>Assassin's Creed Valhalla</h4>
+                            </div>
+                            <div class="platform-and-percentage">
+                                <span class="platform">PS5 Version</span>
+                                <h4 class="percentage">60%</h4>
+                            </div>
+                            <div class="progress-bar-wrapper">
+                                <div class="progress-bar">
+                                    <div class="negative-value"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-card__photo">
+                            <img src="pictures/jpg/Cyberpunk-min.png">
+                        </div>
+                        <div class="game-card__content">
+                            <div class="title">
+                                <h4>Cyberpunk 2077</h4>
+                            </div>
+                            <div class="platform-and-percentage">
+                                <span class="platform">PC Version</span>
+                                <h4 class="percentage">44%</h4>
+                            </div>
+                            <div class="progress-bar-wrapper">
+                                <div class="progress-bar">
+                                    <div class="negative-value"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-card__photo">
+                            <img src="pictures/jpg/GTAV-min.png">
+                        </div>
+                        <div class="game-card__content">
+                            <div class="title">
+                                <h4>Grand Theft Auto V</h4>
+                            </div>
+                            <div class="platform-and-percentage">
+                                <span class="platform">PC Version</span>
+                                <h4 class="percentage">98%</h4>
+                            </div>
+                            <div class="progress-bar-wrapper">
+                                <div class="progress-bar">
+                                    <div class="negative-value"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-card__photo">
+                            <img src="pictures/jpg/TheWitcher3-min.png">
+                        </div>
+                        <div class="game-card__content">
+                            <div class="title">
+                                <h4>The Witcher 3: Wild Hunt</h4>
+                            </div>
+                            <div class="platform-and-percentage">
+                                <span class="platform">PC Version</span>
+                                <h4 class="percentage">14%</h4>
+                            </div>
+                            <div class="progress-bar-wrapper">
+                                <div class="progress-bar">
+                                    <div class="negative-value"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- Two glass floating circles (decoration) -->
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+
+        <!-- Two blured eclipses for background (decoration) -->
+        <div class="eclipse1"></div>
+        <div class="eclipse2"></div>
+
+        <!-- Company logo in bottom right corner -->
+        <span class="logo">
+            <h1>gmrly.</h1>
+        </span>
     </div>
 </body>
 
