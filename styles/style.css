@@ -157,117 +157,10 @@ a:link, a:visited {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  z-index: 5;
 }
 
-.container .content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 70%;
-  height: 100%;
-  padding: 2rem 3rem 0 3rem;
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
-}
-
-.container .content > .title {
-  margin-bottom: 1.3rem;
-}
-
-.container .content::-webkit-scrollbar {
-  width: 40px;
-}
-
-.container .content::-webkit-scrollbar-track {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.container .content::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.container .content::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-form.search {
-  -webkit-box-shadow: 15px 15px 30px 0px rgba(0, 0, 0, 0.15);
-          box-shadow: 15px 15px 30px 0px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-  -webkit-transition: 400ms ease;
-  transition: 400ms ease;
-  width: 100%;
-  padding: 1rem 2rem;
-  height: 55px;
-  background: linear-gradient(106.35deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%);
-  border-radius: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 3.5rem;
-  cursor: default;
-}
-
-form.search:hover {
-  -webkit-transform: scale(1.01);
-          transform: scale(1.01);
-}
-
-form.search button, form.search input {
-  background: unset;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  outline: inherit;
-}
-
-form.search input {
-  width: 93%;
-  color: rgba(72, 100, 107, 0.8);
-}
-
-form.search input::-webkit-input-placeholder {
-  color: inherit;
-}
-
-form.search input:-ms-input-placeholder {
-  color: inherit;
-}
-
-form.search input::-ms-input-placeholder {
-  color: inherit;
-}
-
-form.search input::placeholder {
-  color: inherit;
-}
-
-form.search button {
-  cursor: pointer;
-  -webkit-transition: 400ms ease;
-  transition: 400ms ease;
-  width: 35px;
-  height: 100%;
-  background: url(/pictures/icons/svg/search.svg) no-repeat;
-  background-size: contain;
-  cursor: pointer;
-}
-
-form.search button:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-.profile {
+.container .dashboard .profile {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -284,7 +177,7 @@ form.search button:hover {
           align-items: center;
 }
 
-.profile .img-wrapper {
+.container .dashboard .profile .img-wrapper {
   cursor: pointer;
   -webkit-transition: 400ms ease;
   transition: 400ms ease;
@@ -307,12 +200,12 @@ form.search button:hover {
   background: linear-gradient(135deg, #3098f2 0%, #1ad191 100%);
 }
 
-.profile .img-wrapper:hover {
+.container .dashboard .profile .img-wrapper:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
 
-.profile .img-wrapper img.profile__photo {
+.container .dashboard .profile .img-wrapper img.profile__photo {
   height: calc(100% - 4px);
   width: calc(100% - 4px);
   -o-object-fit: cover;
@@ -320,19 +213,19 @@ form.search button:hover {
   border-radius: 50%;
 }
 
-.profile h3.profile__name {
+.container .dashboard .profile h3.profile__name {
   margin-top: 10px;
 }
 
-.profile .profile__rank {
+.container .dashboard .profile .profile__rank {
   color: rgba(72, 100, 107, 0.8);
 }
 
-ul.links {
+.container .dashboard ul.links {
   width: 100%;
 }
 
-ul.links li.link {
+.container .dashboard ul.links li.link {
   list-style: none;
   padding: 15px 0;
   position: relative;
@@ -345,16 +238,16 @@ ul.links li.link {
   transition: 100ms linear;
 }
 
-ul.links li.link:hover {
+.container .dashboard ul.links li.link:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-ul.links li.link.selected {
+.container .dashboard ul.links li.link.selected {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-ul.links li.link .link__img,
-ul.links li.link .link__text {
+.container .dashboard ul.links li.link .link__img,
+.container .dashboard ul.links li.link .link__text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -363,7 +256,7 @@ ul.links li.link .link__text {
           align-items: center;
 }
 
-ul.links li.link .link__img {
+.container .dashboard ul.links li.link .link__img {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -372,7 +265,7 @@ ul.links li.link .link__img {
           flex: 1.5;
 }
 
-ul.links li.link .link__text {
+.container .dashboard ul.links li.link .link__text {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -381,11 +274,11 @@ ul.links li.link .link__text {
           flex: 2.5;
 }
 
-ul.links li.link .link__text > span {
+.container .dashboard ul.links li.link .link__text > span {
   margin-left: 1rem;
 }
 
-.connect-box {
+.container .dashboard .connect-box {
   cursor: pointer;
   -webkit-transition: 400ms ease;
   transition: 400ms ease;
@@ -412,12 +305,12 @@ ul.links li.link .link__text > span {
   overflow: hidden;
 }
 
-.connect-box:hover {
+.container .dashboard .connect-box:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
 
-.connect-box .connect-box__text {
+.container .dashboard .connect-box .connect-box__text {
   background: linear-gradient(124.55deg, #009DAD 0%, #002EA9 92.32%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -428,12 +321,137 @@ ul.links li.link .link__text > span {
   text-align: start;
 }
 
-.connect-box img.connect-box__img {
+.container .dashboard .connect-box img.connect-box__img {
   width: 100px;
   margin-bottom: 5px;
 }
 
-.game-cards {
+.container .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 70%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.container .content::-webkit-scrollbar {
+  width: 40px;
+}
+
+.container .content::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.container .content::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.container .content::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#scroll-top-link,
+#content-top-position {
+  display: none;
+}
+
+#progress,
+#library,
+#achievements,
+#wish-list {
+  width: 100%;
+  height: 100%;
+  padding: 2rem 3rem 0 3rem;
+  position: absolute;
+  display: none;
+  z-index: 2;
+}
+
+#progress > .title,
+#library > .title,
+#achievements > .title,
+#wish-list > .title {
+  margin-bottom: 1.3rem;
+}
+
+#progress {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 3;
+}
+
+#progress form[name="game-search"] {
+  -webkit-box-shadow: 15px 15px 30px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 15px 15px 30px 0px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  -webkit-transition: 400ms ease;
+  transition: 400ms ease;
+  width: 100%;
+  padding: 1rem 2rem;
+  height: 55px;
+  background: linear-gradient(106.35deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%);
+  border-radius: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 3.5rem;
+  cursor: default;
+}
+
+#progress form[name="game-search"]:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+#progress form[name="game-search"] button, #progress form[name="game-search"] input {
+  background: unset;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  outline: inherit;
+}
+
+#progress form[name="game-search"] input {
+  width: 93%;
+  color: rgba(72, 100, 107, 0.8);
+}
+
+#progress form[name="game-search"] input::-webkit-input-placeholder {
+  color: inherit;
+}
+
+#progress form[name="game-search"] input:-ms-input-placeholder {
+  color: inherit;
+}
+
+#progress form[name="game-search"] input::-ms-input-placeholder {
+  color: inherit;
+}
+
+#progress form[name="game-search"] input::placeholder {
+  color: inherit;
+}
+
+#progress form[name="game-search"] img {
+  width: 35px;
+  height: 100%;
+}
+
+#progress .game-cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -443,14 +461,14 @@ ul.links li.link .link__text > span {
           flex-direction: column;
 }
 
-.game-cards .game-card {
+#progress .game-cards .game-card {
   -webkit-box-shadow: 15px 15px 30px 0px rgba(0, 0, 0, 0.15);
           box-shadow: 15px 15px 30px 0px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   -webkit-transition: 500ms ease;
   transition: 500ms ease;
   width: 100%;
-  height: auto;
+  height: 140px;
   margin-bottom: 3.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -466,19 +484,19 @@ ul.links li.link .link__text > span {
   overflow: hidden;
 }
 
-.game-cards .game-card:hover {
+#progress .game-cards .game-card:hover {
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
   -webkit-box-shadow: 15px 25px 30px 0px rgba(0, 0, 0, 0.15);
           box-shadow: 15px 25px 30px 0px rgba(0, 0, 0, 0.15);
 }
 
-.game-cards .game-card .game-card__photo {
+#progress .game-cards .game-card .game-card__photo {
   width: 140px;
-  height: 140px;
+  height: 100%;
 }
 
-.game-cards .game-card .game-card__photo img {
+#progress .game-cards .game-card .game-card__photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -487,9 +505,9 @@ ul.links li.link .link__text > span {
      object-position: top;
 }
 
-.game-cards .game-card .game-card__content {
+#progress .game-cards .game-card .game-card__content {
   width: calc(100% - 150px);
-  height: auto;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -503,7 +521,7 @@ ul.links li.link .link__text > span {
   padding: 0.8rem 1.5rem;
 }
 
-.game-cards .game-card .game-card__content .platform-and-percentage {
+#progress .game-cards .game-card .game-card__content .platform-and-percentage {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -512,18 +530,22 @@ ul.links li.link .link__text > span {
           justify-content: space-between;
 }
 
-.game-cards .game-card .game-card__content .platform-and-percentage .platform {
+#progress .game-cards .game-card .game-card__content .platform-and-percentage .platform {
   color: #87a2a9;
 }
 
-.game-cards .game-card .game-card__content .platform-and-percentage h4.percentage {
+#progress .game-cards .game-card .game-card__content .platform-and-percentage h4.percentage {
   font-size: 26px;
   font-weight: bold;
   color: rgba(17, 192, 172, 0.8);
   margin-right: 1rem;
 }
 
-.game-cards .game-card .game-card__content .progress-bar-wrapper {
+#progress .game-cards .game-card .game-card__content .platform-and-percentage .percentage::after {
+  content: '%';
+}
+
+#progress .game-cards .game-card .game-card__content .progress-bar-wrapper {
   width: 100%;
   height: 40px;
   display: -webkit-box;
@@ -540,7 +562,7 @@ ul.links li.link .link__text > span {
   background: linear-gradient(106.35deg, #3098f2 0%, #2ee8a7 100%);
 }
 
-.game-cards .game-card .game-card__content .progress-bar-wrapper .progress-bar {
+#progress .game-cards .game-card .game-card__content .progress-bar-wrapper .progress-bar {
   width: calc(100% - 4px);
   height: calc(100% - 4px);
   background: linear-gradient(106.35deg, rgba(48, 152, 242, 0.6) 0%, rgba(46, 232, 167, 0.6) 100%);
@@ -555,9 +577,11 @@ ul.links li.link .link__text > span {
           flex-direction: row-reverse;
 }
 
-.game-cards .game-card .game-card__content .progress-bar-wrapper .progress-bar .negative-value {
-  width: 40%;
+#progress .game-cards .game-card .game-card__content .progress-bar-wrapper .progress-bar .negative-value {
+  width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: white;
+  -webkit-transition: 1000ms ease-in-out;
+  transition: 1000ms ease-in-out;
 }
 /*# sourceMappingURL=style.css.map */

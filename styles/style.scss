@@ -181,24 +181,141 @@ a:link, a:visited {
         justify-content: space-evenly;
         align-items: center;
         text-align: center;
+        
+        z-index: 5;
+
+        .profile {
+            width: 100%;
+        
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        
+            .img-wrapper { 
+                @include hover-scale(1.05);
+                @include box-shadow();
+        
+                width: 110px;
+                height: 110px;
+                overflow: hidden;
+        
+                border-radius: 50%;
+        
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        
+                position: relative;
+                background: linear-gradient(135deg, rgba(48, 152, 242, 1) 0%, rgb(26, 209, 145) 100%);
+        
+                img.profile__photo {
+                    height: calc(100% - 4px);
+                    width: calc(100% - 4px);
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+            }
+        
+            h3.profile__name {
+                margin-top: 10px;
+            }
+        
+            .profile__rank {
+                color: $darken;
+            }
+        }
+        
+        ul.links {
+            width: 100%;
+        
+            li.link {
+                list-style: none;
+                padding: 15px 0;
+        
+                position: relative;
+                display: flex;
+        
+                width: 100%;
+                cursor: pointer;
+                transition: 100ms linear;
+        
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.3);
+                }
+        
+                &.selected {
+                    background-color: rgba(255, 255, 255, 0.3);
+                    // background: linear-gradient(104.02deg, rgba(255, 255, 255, 0.5) 9.99%, rgba(255, 255, 255, 0.1) 90.36%);
+                }
+        
+                .link__img,
+                .link__text {
+                    display: flex;
+                    align-items: center;
+                }
+        
+                .link__img {
+                    justify-content: flex-end;
+                    flex: 1.5;
+                }
+        
+                .link__text {
+                    justify-content: flex-start;
+                    flex: 2.5;
+        
+                    > span {
+                        margin-left: 1rem;
+                    }
+                }
+            }
+        }
+        
+        .connect-box {
+            @include hover-scale(1.05);
+            @include box-shadow();
+                
+            width: 75%;
+            height: 20%;
+            background: linear-gradient(106.35deg, rgba(48, 242, 229, 0.6) 0%, rgba(46, 97, 232, 0.6) 100%);
+            border-radius: 2em;
+        
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 15px 20px 15px 30px;
+        
+            overflow: hidden;
+        
+            .connect-box__text {
+                background: linear-gradient(124.55deg, #009DAD 0%, #002EA9 92.32%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+        
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 34px;
+                text-align: start;
+            }
+        
+            img.connect-box__img {
+                width: 100px;
+                margin-bottom: 5px;
+            }
+        }
     }
 
     .content {
         display: flex;
-        flex-direction: column;
+        position: relative;
 
         width: 70%;
         height: 100%;
-        padding: 2rem 3rem 0 3rem;
-
-        display: flex;
-        flex-direction: column;
 
         overflow-y: scroll;
-
-        > .title {
-            margin-bottom: 1.3rem;
-        }
+        overflow-x: hidden;
 
         &::-webkit-scrollbar {
             width: 40px;
@@ -218,267 +335,177 @@ a:link, a:visited {
     }
 }
 
-form.search {
-    @include box-shadow();
-    @include hover-scale(1.01);
+#scroll-top-link,
+#content-top-position {
+    display: none;
+}
 
+#progress,
+#library,
+#achievements,
+#wish-list {
     width: 100%;
-    padding: 1rem 2rem;
-    height: 55px;
+    height: 100%;
 
-    background: linear-gradient(106.35deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%);
-    border-radius: 2rem;
+    padding: 2rem 3rem 0 3rem;
+    position: absolute;
 
-    display: flex;
-    justify-content: space-between;
+    display: none;
+    z-index: 2;
 
-    margin-bottom: 3.5rem;
-    cursor: default;
-
-    button, input {
-        background: unset;
-        color: inherit;
-        border: none;
-        padding: 0;
-        font: inherit;
-        outline: inherit;
-    }
-
-    input {
-        width: 93%;
-
-        color: $darken;
-
-        &::placeholder {
-            color: inherit;
-        }
-    }
-
-    button {
-        @include hover-scale(1.1);
-
-        width: 35px;
-        height: 100%;
-
-        background: url(/pictures/icons/svg/search.svg) no-repeat;
-        background-size: contain;
-
-        cursor: pointer;
+    > .title {
+        margin-bottom: 1.3rem;
     }
 }
 
-.profile {
+#progress {
     width: 100%;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
 
-    .img-wrapper { 
-        @include hover-scale(1.05);
+    z-index: 3;
+
+    form[name="game-search"] {
         @include box-shadow();
-
-        width: 110px;
-        height: 110px;
-        overflow: hidden;
-
-        border-radius: 50%;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        position: relative;
-        background: linear-gradient(135deg, rgba(48, 152, 242, 1) 0%, rgb(26, 209, 145) 100%);
-
-        img.profile__photo {
-            height: calc(100% - 4px);
-            width: calc(100% - 4px);
-            object-fit: cover;
-            border-radius: 50%;
-        }
-    }
-
-    h3.profile__name {
-        margin-top: 10px;
-    }
-
-    .profile__rank {
-        color: $darken;
-    }
-}
-
-ul.links {
-    width: 100%;
-
-    li.link {
-        list-style: none;
-        padding: 15px 0;
-
-        position: relative;
-        display: flex;
-
+        @include hover-scale(1.02);
+    
         width: 100%;
-        cursor: pointer;
-        transition: 100ms linear;
-
-        &:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-
-        &.selected {
-            background-color: rgba(255, 255, 255, 0.3);
-            // background: linear-gradient(104.02deg, rgba(255, 255, 255, 0.5) 9.99%, rgba(255, 255, 255, 0.1) 90.36%);
-        }
-
-        .link__img,
-        .link__text {
-            display: flex;
-            align-items: center;
-        }
-
-        .link__img {
-            justify-content: flex-end;
-            flex: 1.5;
-        }
-
-        .link__text {
-            justify-content: flex-start;
-            flex: 2.5;
-
-            > span {
-                margin-left: 1rem;
-            }
-        }
-    }
-}
-
-.connect-box {
-    @include hover-scale(1.05);
-    @include box-shadow();
-        
-    width: 75%;
-    height: 20%;
-    background: linear-gradient(106.35deg, rgba(48, 242, 229, 0.6) 0%, rgba(46, 97, 232, 0.6) 100%);
-    border-radius: 2em;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 15px 20px 15px 30px;
-
-    overflow: hidden;
-
-    .connect-box__text {
-        background: linear-gradient(124.55deg, #009DAD 0%, #002EA9 92.32%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-
-        font-weight: bold;
-        font-size: 20px;
-        line-height: 34px;
-        text-align: start;
-    }
-
-    img.connect-box__img {
-        width: 100px;
-        margin-bottom: 5px;
-    }
-}
-
-.game-cards {
-    display: flex;
-    flex-direction: column;
-
-    .game-card {
-        @include box-shadow();
-        @include hover-pull-up();
-
-        width: 100%;
-        height: auto;
-        margin-bottom: 3.5rem;
-
-        display: flex;
-        flex-direction: row;
-
-        background: linear-gradient(106.35deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 100%);
-        backdrop-filter: blur(100px);
-
+        padding: 1rem 2rem;
+        height: 55px;
+    
+        background: linear-gradient(106.35deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%);
         border-radius: 2rem;
-        overflow: hidden;
-
-        .game-card__photo {
-            width: 140px;
-            height: 140px;
-
-            img {
-                width: 100%;
-                height: 100%;
-
-                object-fit: cover;
-                -o-object-fit: cover;
-
-                object-position: top;
+    
+        display: flex;
+        justify-content: space-between;
+    
+        margin-bottom: 3.5rem;
+        cursor: default;
+    
+        button, input {
+            background: unset;
+            color: inherit;
+            border: none;
+            padding: 0;
+            font: inherit;
+            outline: inherit;
+        }
+    
+        input {
+            width: 93%;
+    
+            color: $darken;
+    
+            &::placeholder {
+                color: inherit;
             }
         }
+    
+        img {
+            width: 35px;
+            height: 100%;
+        }
+    }
 
-        .game-card__content {
-            width: calc(100% - 150px);
-            height: auto;
-
+    .game-cards {
+        display: flex;
+        flex-direction: column;
+    
+        .game-card {
+            @include box-shadow();
+            @include hover-pull-up();
+    
+            width: 100%;
+            height: 140px;
+            margin-bottom: 3.5rem;
+    
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            padding: 0.8rem 1.5rem;
-
-            .platform-and-percentage {
-                display: flex;
-                justify-content: space-between;
-
-                .platform {
-                    color: $lighty;
-                }
-
-                h4.percentage {
-                    font-size: 26px;
-                    font-weight: bold;
-                    color: rgba(17, 192, 172, 0.8);
-                    margin-right: 1rem;
+            flex-direction: row;
+    
+            background: linear-gradient(106.35deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.5) 100%);
+            backdrop-filter: blur(100px);
+    
+            border-radius: 2rem;
+            overflow: hidden;
+    
+            .game-card__photo {
+                width: 140px;
+                height: 100%;
+    
+                img {
+                    width: 100%;
+                    height: 100%;
+    
+                    object-fit: cover;
+                    -o-object-fit: cover;
+    
+                    object-position: top;
                 }
             }
-            
-            .progress-bar-wrapper {
-                width: 100%;
-                height: 40px;
-
+    
+            .game-card__content {
+                width: calc(100% - 150px);
+                height: 100%;
+    
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                overflow: hidden;
-
-                border-radius: 2rem;
-                background: linear-gradient(106.35deg, rgba(48, 152, 242, 1) 0%, rgba(46, 232, 167, 1) 100%);
-
-                .progress-bar {
-                    width: calc(100% - 4px);
-                    height: calc(100% - 4px);
-                    
-                    background: linear-gradient(106.35deg, rgba(48, 152, 242, 0.6) 0%, rgba(46, 232, 167, 0.6) 100%);
-                    border-radius: 2rem;
-                    overflow: hidden;
-
+                flex-direction: column;
+                justify-content: space-between;
+    
+                padding: 0.8rem 1.5rem;
+    
+                .platform-and-percentage {
                     display: flex;
-                    flex-direction: row-reverse;
+                    justify-content: space-between;
+    
+                    .platform {
+                        color: $lighty;
+                    }
+    
+                    h4.percentage {
+                        font-size: 26px;
+                        font-weight: bold;
+                        color: rgba(17, 192, 172, 0.8);
+                        margin-right: 1rem;
+                    }
 
-                    .negative-value {
-                        width: 40%;
-                        height: 100%;
+                    .percentage::after {
+                        content: '%';
+                    }
+                }
+                
+                .progress-bar-wrapper {
+                    width: 100%;
+                    height: 40px;
+    
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+    
+                    border-radius: 2rem;
+                    background: linear-gradient(106.35deg, rgba(48, 152, 242, 1) 0%, rgba(46, 232, 167, 1) 100%);
+    
+                    .progress-bar {
+                        width: calc(100% - 4px);
+                        height: calc(100% - 4px);
+                        
+                        background: linear-gradient(106.35deg, rgba(48, 152, 242, 0.6) 0%, rgba(46, 232, 167, 0.6) 100%);
+                        border-radius: 2rem;
+                        overflow: hidden;
+    
+                        display: flex;
+                        flex-direction: row-reverse;
+    
+                        .negative-value {
+                            width: 100%;
+                            height: 100%;
+    
+                            background-color: rgba(255, 255, 255, 1);
 
-                        background-color: rgba(255, 255, 255, 0.8);
+                            transition: 1000ms ease-in-out;
+                        }
                     }
                 }
             }
